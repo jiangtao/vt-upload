@@ -39,7 +39,7 @@
                 if (!file) {
                     return
                 }
-                this.value = ''
+                e.target.value = ''
                 this.$emit('change', e)
 
                 if (Imager.isImage(file) && this.compress) {
