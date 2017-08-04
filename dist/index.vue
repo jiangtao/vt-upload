@@ -56,8 +56,10 @@
                             this.upload(Imager.base64ToFile(base64, file.name), base64)
                         }
                     })
+                } else if(this.base64 ){
+                    Imager.fileToBase64(file).then(base64 => this.upload(base64, base64))
                 } else {
-                    Imager.fileToBase64(file).then(base64 => this.upload(file, base64))
+                    this.upload(file, null)
                 }
             },
             upload(file, base64) {
